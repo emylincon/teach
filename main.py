@@ -63,14 +63,13 @@ def chat_control():
 
 
 def plot_temp_graph():
-    global temp
     fig1 = plt.figure('Temperature Readings in Celsius')
 
     fig1.canvas.mpl_connect('close_event', handle_close)
     fig1 = plt.clf()
     fig1 = plt.ion()
     # fig1 = plt.grid(True, color='k')
-    fig1 = plt.scatter(temp, list(range(0,len(temp))), label='Temp C')
+    fig1 = plt.scatter(table, list(range(0,len(table))), label='Temp C')
     fig1 = plt.title('Temperature graph')
     fig1 = plt.ylabel('Temperature')
     fig1 = plt.xlabel('Time (seconds)')
