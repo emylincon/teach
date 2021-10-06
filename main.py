@@ -18,6 +18,7 @@ print('-----------------------------------')
 
 table = [0]
 graph_check = 0
+plt.style.use('dark_background')
 
 
 def on_connect(connect_client, userdata, flags, rc):
@@ -66,7 +67,6 @@ def chat_control():
 
 def plot_temp_graph():
     fig1 = plt.figure('Temperature Readings in Celsius')
-
     fig1.canvas.mpl_connect('close_event', handle_close)
     fig1 = plt.clf()
     fig1 = plt.ion()
