@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import os
 import random
+import time
 
 os.system('clear')
 print('-----------------------------------')
@@ -24,6 +25,7 @@ while True:
         no = str(random.randrange(1,100))
         client.publish(topic, no)
         print(no)
+        time.sleep(1)
     except KeyboardInterrupt:
         print('\nProgramme Terminated')
         break
