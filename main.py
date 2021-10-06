@@ -78,7 +78,7 @@ def plot_temp_graph():
     fig1 = plt.xlabel('Time (seconds)')
     fig1 = plt.grid(True)
     fig1 = plt.legend()
-    #fig1 = plt.pause(1)
+    fig1 = plt.pause(1)
 
 
 def main():
