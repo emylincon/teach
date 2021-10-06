@@ -30,6 +30,8 @@ def on_connect(connect_client, userdata, flags, rc):
 def on_message(message_client, userdata, msg):
     # print the message received from the subscribed topic
     no = str(msg.payload, 'utf-8')
+    if len(table) > 100:
+        table.pop(0)
     table.append(int(no))
 
 
@@ -70,10 +72,11 @@ def plot_temp_graph():
     fig1 = plt.ion()
     # fig1 = plt.grid(True, color='k')
     #fig1 = plt.scatter(table, list(range(0,len(table))), label='Temp C')
-    fig1 = plt.plot(table, ':o', label='Data')
-    fig1 = plt.title('Temperature graph')
-    fig1 = plt.ylabel('Temperature')
+    fig1 = plt.plot(table, ':o', label='Time Series')
+    fig1 = plt.title('Telemetry Monitor')
+    fig1 = plt.ylabel('Data Value')
     fig1 = plt.xlabel('Time (seconds)')
+    fig1 = plt.grid(True)
     fig1 = plt.legend()
     fig1 = plt.pause(2)
 
