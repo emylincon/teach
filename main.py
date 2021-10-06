@@ -72,7 +72,7 @@ def plot_temp_graph():
     fig1 = plt.ion()
     # fig1 = plt.grid(True, color='k')
     #fig1 = plt.scatter(table, list(range(0,len(table))), label='Temp C')
-    fig1 = plt.plot(table, ':o', label=f'Current Average = {round(sum(table)/len(table),3)}')
+    fig1 = plt.plot(table, ':o', label="Current Average = "+str(round(sum(table)/len(table),3)))
     fig1 = plt.title('Telemetry Monitor')
     fig1 = plt.ylabel('Data Value')
     fig1 = plt.xlabel('Time (seconds)')
